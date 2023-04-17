@@ -1,7 +1,0 @@
-site_name: 说明文档
-site_url: http://whg555.github.io
-nav:
-  - Home: index.md
-  - About: about.md
-
-theme: readthedocs
