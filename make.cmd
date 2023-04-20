@@ -26,24 +26,28 @@ if "%1" == "install" (
 if "%1" == "new" (
     cd docs
 	%RUNAPP% new %2
+	cd ..
 	goto end
 )
 
 if "%1" == "serve" (
     cd docs
 	%RUNAPP% serve
+	cd ..
 	goto end
 )
 
 if "%1" == "build" (
     cd docs
 	%RUNAPP% build --clean
+	cd ..
 	goto end
 )
 
 if "%1" == "pack" (
 	cd code
-    pyinstaller -D -w --icon=logo.ico --add-data aishow.ui;aishow.ui main.py wlcmd.py base.py
+    pyinstaller -D -w --icon=logo.ico --add-data main.ui/main.ui;main.ui --add-data logo.ico;logo.ico  main.py --noconfirm
+    cd ..
 	goto end
 )
 
