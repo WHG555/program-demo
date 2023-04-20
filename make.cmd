@@ -19,22 +19,31 @@ if "%1" == "help" (
 )
 
 if "%1" == "install" (
-	pip install mkdocs
+	pip install -r requirements.txt
 	goto end
 )
 
 if "%1" == "new" (
+    cd docs
 	%RUNAPP% new %2
 	goto end
 )
 
 if "%1" == "serve" (
+    cd docs
 	%RUNAPP% serve
 	goto end
 )
 
-if "%1" == "serve" (
+if "%1" == "build" (
+    cd docs
 	%RUNAPP% build --clean
+	goto end
+)
+
+if "%1" == "pack" (
+	cd code
+    pyinstaller -D -w --icon=logo.ico --add-data aishow.ui;aishow.ui main.py wlcmd.py base.py
 	goto end
 )
 
