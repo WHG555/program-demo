@@ -1,0 +1,5 @@
+# 屏蔽不需要的文件
+# ROS
+rosworkspace/build/
+rosworkspace/devel/
+rosworkspace/install/
